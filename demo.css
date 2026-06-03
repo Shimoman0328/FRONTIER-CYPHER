@@ -1,0 +1,261 @@
+@charset "UTF-8";
+html * {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background:#6cf;
+  margin:0;
+  text-align:center;
+}
+.content h1{
+  margin:0;
+}
+.navi{
+  position:fixed;
+  padding:80px,0,0,30px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+  width:350px;
+  margin-right:auto;
+  margin-top:245px;
+  z-index:10;
+}
+.navi > li{
+ 
+}
+.navi li{
+  list-style:none;
+  width:100%;
+}
+.navi ul{
+  list-style:none;
+  padding-left:0;
+}
+.navi li li{
+  list-style:none;
+  height:0;
+  overflow:hidden;
+  transform:translatex(0);
+}
+.navi li:hover >ul >li{
+  transform:translatex(700px) translatey(-56px);
+  height:3.5em;
+  overflow:visible;
+}
+html {
+    scroll-behavior: smooth;
+}
+.page_top_btn {
+   position: fixed;
+   bottom: 15px;
+   right: 10px;
+   padding: 10px 15px;
+   background-color: #007bff;
+   color: white;
+   text-decoration: none;
+   border-radius: 5px;
+   font-weight: bold;
+   transition: background-color 0.3s ease;
+}
+.page_top_btn:hover {
+   background-color: #0056b3;
+}
+.navi li ul{
+  width:100%;
+}
+.navi li ul li ul{
+  top:0;
+  left:100%;
+  width:100%;
+}
+.navi li ul li ul:before{
+  position:absolute;
+  content="";
+  width:0;
+  height:0;
+}
+.navi li ul li:hover>ul >li{
+  overflow:visible;
+  height:3.5em;
+}
+nav ul{
+  margin:0 20%;
+}
+.content {
+  text-align:center;
+  position:relative;
+  left:350px;
+  width:1550px;
+  background:#6cf;
+}
+.navi li a{
+  padding:1em 1.5em;
+  text-decoration:none;
+  background:#555;
+  text-align:center;
+  display:block;
+  color:#fff;
+}
+.navi li:hover>ul>li{
+  height:3.5em;
+  overflow:visible;
+}
+.navi li a:hover{
+  background:#ddd;
+  color:#333;
+}
+.haikei{
+  background:#00a;
+  height:3.5em;
+}
+.footer{
+  width:1920px;
+  height:250px;
+  bottom:0px;
+}
+h1{
+  font-size:5em;
+}
+h2{
+  font-size:3.2em;
+}
+h3{
+  font-size:1.5em;
+}
+p{
+  font-size:1.2em;
+  margin:20px;
+}
+.gotop{
+  height:60px;
+  text-decoration:none;
+}
+.side{
+  position:absolute;
+  right:350px;
+}
+article{
+  display:flex;
+}
+.mokuji{
+  display:flex;
+  text-align:center;
+  position:relative;
+  left:300px;
+  margin:50px 0;
+  font-size:20px;
+  list-style:none;
+  
+}
+.mokuji li{
+  width:250px;
+  background:#ccf;
+  display:block;
+}
+.mokuji li a{
+  text-decoration:none;
+  color:#f69;
+  font-size:1.5em
+}
+.mokuji li a:hover{
+  background:#c6f;
+  color:#fff;
+}
+.header{
+  padding:0;
+  width:350px;
+  position:fixed;
+  z-index:10;
+}
+.movie{
+  position:relative;
+  left:500px;
+  width:1245px;
+  height:700px;
+  background:#06f;
+}
+video{
+  width:100%;
+}
+.content ul{
+  list-style:none;
+}
+.seihuku{
+  width:350px;
+  height:250px;
+  position:relative;
+  top:693px;
+  position:fixed;
+  z-index:10;
+}
+.maincontent {
+  text-align:center;
+  position:relative;
+  left:350px;
+  width:1100px;
+  background:#6cf;
+  margin:0 5%;
+}
+.back{
+  width:1245px;
+  background:#6cf;
+  z-index:0;
+}
+.act a{
+  font-size:2em;
+  text-decoration:none;
+  color:#000;
+}
+.bu{
+  text-align:center;
+  display:inline-block;
+}
+.bukatu{
+  width:990px;
+  position:relative;
+  left:250px;
+  display:flex;
+  font-size:2em;
+}
+.bukatu ul{
+  width:330px;
+}
+.bukatu li a{
+  text-decoration:none;
+  display:block;
+  color:#06c;
+}
+.bukatu li{
+  border:1px solid #000;
+  background:#fff;
+}
+.bukatu li a:visited{
+  color:#06c;
+}
+.seitokai{
+  width:600px;
+  position:relative;
+  left:450px;
+  display:flex;
+  font-size:2em;
+}
+.seitokai ul{
+  width:300px;
+}
+.seitokai li a{
+  text-decoration:none;
+  display:block;
+  color:#06c;
+}
+.seitokai li{
+  border:1px solid #000;
+  background:#fff;
+}
+.seitokai li a:visited{
+  color:#06c;
+}
+.gakkamenu{
+  position:relative;
+  left:200px;
+}
