@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTRY // SF6 ENERGY TOURNAMENT</title>
+    <style>
+        /* デザインスタイル（前回と全く同じレッドブル・サイバー風） */
+        body { font-family: 'Helvetica Neue', Arial, 'Impact', sans-serif; background-color: #040a18; color: #e2e8f0; margin: 0; padding: 0; line-height: 1.6; }
+        header { position: fixed; top: 0; left: 0; width: 100%; background: linear-gradient(135deg, rgba(10, 25, 49, 0.85) 0%, rgba(4, 10, 24, 0.9) 100%); backdrop-filter: blur(8px); border-bottom: 4px solid #ff003c; padding: 1.5rem 1rem; text-align: center; z-index: 1000; box-sizing: border-box; }
+        header h1 { margin: 0; font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 10px #ff003c, 0 0 20px #00a8ff; }
+        header p { color: #ffcc00; font-weight: bold; letter-spacing: 5px; margin: 0.2rem 0 0 0; text-shadow: 0 0 8px rgba(255, 204, 0, 0.6); font-size: 0.9rem; }
+        main { max-width: 700px; margin: 160px auto 3rem auto; padding: 0 1.5rem; }
+        .form-card { background: rgba(10, 25, 49, 0.6); border: 1px solid #15305b; border-top: 5px solid #00a8ff; border-radius: 4px; padding: 2.5rem; backdrop-filter: blur(5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        h2 { color: #fff; font-size: 1.8rem; margin-top: 0; text-transform: uppercase; border-bottom: 2px solid #ff003c; padding-bottom: 0.5rem; letter-spacing: 1px; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.8rem; }
+        label { display: block; color: #ffcc00; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.95rem; letter-spacing: 1px; }
+        input[type="text"], input[type="email"], select { width: 100%; padding: 0.8rem; background-color: #040a18; border: 1px solid #15305b; border-radius: 4px; color: #fff; font-size: 1rem; box-sizing: border-box; transition: all 0.3s ease; }
+        input[type="text"]:focus, input[type="email"]:focus, select:focus { outline: none; border-color: #00a8ff; box-shadow: 0 0 10px rgba(0, 168, 255, 0.5); }
+        .radio-group { display: flex; gap: 2rem; margin-top: 0.5rem; }
+        .radio-label { display: flex; align-items: center; color: #fff; cursor: pointer; font-weight: normal; }
+        .radio-label input { margin-right: 0.5rem; accent-color: #ff003c; }
+        .note { font-size: 0.8rem; color: #516993; margin-top: 0.3rem; }
+        .btn-container { text-align: center; margin-top: 2.5rem; }
+        
+        .submit-btn { display: inline-block; width: 100%; background: #ff003c; color: #fff; border: 2px solid #ffcc00; padding: 1rem; font-size: 1.4rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; box-shadow: 0 0 15px rgba(255, 0, 60, 0.5); transition: all 0.3s ease; cursor: pointer; }
+        .submit-btn:hover { background: #00a8ff; border-color: #fff; box-shadow: 0 0 25px #00a8ff; transform: scale(1.02); }
+        .submit-btn:disabled { background: #516993; border-color: #516993; cursor: not-allowed; box-shadow: none; }
+        
+        /* 完了メッセージ表示用 */
+        .success-message { display: none; color: #00f2fe; text-align: center; font-size: 1.3rem; font-weight: bold; margin-top: 1.5rem; text-shadow: 0 0 10px rgba(0, 242, 254, 0.5); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SF6 CHARGE TOURNAMENT</h1>
+        <p>// GIVE YOU WINGS</p>
+    </header>
+
+    <main>
+        <div class="form-card">
+            <h2>ENTRY FORM // エントリー登録</h2>
+            
+            <form id="entryForm" onsubmit="sendToDiscord(event)">
+                <div class="form-group">
+                    <label for="player-name">PLAYER NAME // プレイヤー名（必須）</label>
+                    <input type="text" id="player-name" required placeholder="例：Gamer_X">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">EMAIL // メールアドレス（必須）</label>
+                    <input type="email" id="email" required placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="character">MAIN CHARACTER // 使用キャラクター（必須）</label>
+                    <select id="character" required>
+                        <option value="" disabled selected>キャラクターを選択してください</option>
+                        <option value="ルーク">ルーク (LUKE)</option>
+                        <option value="ジェイミー">ジェイミー (JAMIE)</option>
+                        <option value="マノン">マノン (MANON)</option>
+                        <option value="キンバリー">キンバリー (KIMBERLY)</option>
+                        <option value="マリーザ">マリーザ (MARISA)</option>
+                        <option value="リリー">リリー (LILY)</option>
+                        <option value="JP">JP</option>
+                        <option value="ジュリ">ジュリ (JURI)</option>
+                        <option value="ディージェイ">ディージェイ (DEE JAY)</option>
+                        <option value="キャミィ">キャミィ (CAMMY)</option>
+                        <option value="リュウ">リュウ (RYU)</option>
+                        <option value="エドモンド本田">エドモンド本田 (E.HONDA)</option>
+                        <option value="ブランカ">ブランカ (BLANKA)</option>
+                        <option value="ガイル">ガイル (GUILE)</option>
+                        <option value="ケン">ケン (KEN)</option>
+                        <option value="春麗">春麗 (CHUN-LI)</option>
+                        <option value="ザンギエフ">ザンギエフ (ZANGIEF)</option>
+                        <option value="ダルシム">ダルシム (DHALSIM)</option>
+                        <option value="ラシード">ラシード (RASHID)</option>
+                        <option value="A.K.I.">A.K.I.</option>
+                        <option value="エド">エド (ED)</option>
+                        <option value="豪鬼">豪鬼 (AKUMA)</option>
+                        <option value="ベガ">ベガ (M.BISON)</option>
+                        <option value="エレナ">エレナ (ELENA)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>CONTROL STYLE // 操作スタイル</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="control" value="CLASSIC" checked> CLASSIC（クラシック）
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="control" value="MODERN"> MODERN（モダン）
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rank">CURRENT RANK // 最高ランク</label>
+                    <select id="rank">
+                        <option value="ROOKIE 〜 GOLD">ROOKIE 〜 GOLD</option>
+                        <option value="PLATINUM">PLATINUM</option>
+                        <option value="DIAMOND">DIAMOND</option>
+                        <option value="MASTER">MASTER</option>
+                        <option value="LEGEND">LEGEND</option>
+                    </select>
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" id="submitBtn" class="submit-btn">SEND ENTRY // 登録する</button>
+                </div>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                ⚡ ENTRY SUCCESSFUL // エントリーが完了しました！当日の激闘をお待ちしています。
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function sendToDiscord(event) {
+            event.preventDefault(); // 画面がリロードされるのを防ぐ
+
+            // 1. 【超重要】ここにステップ1でコピーしたDiscordのURLを貼り付けてください！
+            const webhookUrl = "https://discord.com/api/webhooks/1522474866018746401/J1smD3dwAf4MrHH6XPZA_TEeEpE0h1guMXsGqSOpemtJ2hXvbjc58OaPY8Hq1loYbj20";
+
+            // 2. 画面から入力された値を取得
+            const playerName = document.getElementById('player-name').value;
+            const email = document.getElementById('email').value;
+            const character = document.getElementById('character').value;
+            const control = document.querySelector('input[name="control"]:checked').value;
+            const rank = document.getElementById('rank').value;
+
+            // ボタンを連打できないように無効化する
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "TRANSMITTING...";
+
+            // 3. Discordに送るメッセージの見た目を整える
+            const discordMessage = {
+                username: "SF6 大会受付システム",
+                avatar_url: "https://i.imgur.com/4M34gN1.png", // ロボットの仮アイコン
+                embeds: [{
+                    title: "🔥 新着エントリーを受信しました！",
+                    color: 16711740, // レッドブル風の赤色（16進数のカラーコード）
+                    fields: [
+                        { name: "👤 プレイヤー名", value: playerName, inline: true },
+                        { name: "🎮 使用キャラ", value: character, inline: true },
+                        { name: "🕹️ 操作スタイル", value: control, inline: true },
+                        { name: "🏆 最高ランク", value: rank, inline: true },
+                        { name: "📧 メールアドレス", value: email, inline: false }
+                    ],
+                    footer: { text: "SF6 CHARGE TOURNAMENT" },
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            // 4. Discordのサーバーへデータを送信
+            fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(discordMessage)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // 送信成功したらフォームを隠して、完了メッセージを出す
+                    document.getElementById('entryForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                } else {
+                    alert("送信に失敗しました。URLが正しいか確認してください。");
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "SEND ENTRY // 登録する";
+                }
+            })
+            .catch(error => {
+                alert("エラーが発生しました。");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "SEND ENTRY // 登録する";
+            });
+        }
+    </script>
+</body>
+</html>
