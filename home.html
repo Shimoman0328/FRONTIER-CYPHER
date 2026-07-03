@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF6 ENERGY TOURNAMENT</title>
+    <style>
+        /* 全体のスタイル設定 */
+        body {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            background-color: #040a18; /* レッドブル風の深い紺色 */
+            color: #e2e8f0; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
+        /* ★スクロール追従ヘッダーの設定 */
+        header {
+            position: fixed; /* 画面の上部に固定 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* 近未来的な半透明グラデーション（背景が透けて見える） */
+            background: linear-gradient(135deg, rgba(10, 25, 49, 0.85) 0%, rgba(4, 10, 24, 0.9) 100%);
+            backdrop-filter: blur(8px); /* 後ろの要素をぼかすサイバーエフェクト */
+            border-bottom: 4px solid #ff003c; /* 鮮烈なレッド */
+            padding: 1.5rem 1rem; /* 固定時に邪魔にならないよう少しスリムに */
+            text-align: center;
+            z-index: 1000; /* コンテンツの一番上に表示 */
+            box-sizing: border-box;
+        }
+
+        /* 輝くタイトル */
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem; /* 固定ヘッダー用に少しだけサイズ調整 */
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #ff003c, 0 0 20px #00a8ff;
+        }
+
+        header p {
+            color: #ffcc00; /* レッドブル・イエロー */
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin: 0.2rem 0 0 0;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ★メインコンテンツの外枠 */
+        main {
+            max-width: 900px;
+            margin: 160px auto 3rem auto; /* ヘッダーが固定された分、上の余白（margin-top）を確保 */
+            padding: 0 1.5rem;
+        }
+
+        /* コンテンツカード */
+        .section-card {
+            background: rgba(10, 25, 49, 0.6);
+            border: 1px solid #15305b;
+            border-left: 5px solid #00a8ff; /* 左側はライトブルー */
+            border-radius: 4px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-top: 0;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ff003c; /* タイトルの下線はレッド */
+            padding-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* 大会概要のグリッド */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .grid-item {
+            background: #040a18;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 168, 255, 0.2);
+        }
+
+        .grid-item strong {
+            color: #ffcc00;
+            display: block;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        /* エントリーボタン */
+        .btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .entry-btn {
+            display: inline-block;
+            background: #ff003c;
+            color: #fff;
+            border: 2px solid #ffcc00;
+            padding: 1rem 3.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .entry-btn:hover {
+            background: #00a8ff;
+            border-color: #fff;
+            box-shadow: 0 0 25px #00a8ff;
+            transform: scale(1.05) translateY(-3px);
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.8rem;
+            color: #516993;
+            border-top: 1px solid rgba(0, 168, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SF6 CHARGE TOURNAMENT</h1>
+        <p>// GIVE YOU WINGS</p>
+    </header>
+
+    <main>
+        <div class="section-card">
+            <h2>ABOUT // 大会概要</h2>
+            <p>限界を突破せよ。プレミアムなスリルと、最高峰の闘いがここにある。『ストリートファイター6』コミュニティエナジーカップ、開幕。</p>
+            
+            <div class="grid">
+                <div class="grid-item">
+                    <strong>DATE // 日時</strong>
+                    2026.07.18 (SAT) 20:00 START
+                </div>
+                <div class="grid-item">
+                    <strong>HARDWARE // 機種</strong>
+                    Steam / PS5 / Xbox (Crossplay ON)
+                </div>
+                <div class="grid-item">
+                    <strong>SLOT // 定員</strong>
+                    64 PLAYERS (先着順)
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card" style="border-left-color: #ff003c;">
+            <h2>RULES // ルール</h2>
+            <ul>
+                <li>トーナメント形式：シングルエリミネーション（一発勝負）</li>
+                <li>試合形式：2本先取 (BO3) ／ 決勝戦のみ3本先取 (BO5)</li>
+                <li>操作スタイル：モダン・クラシック共に使用可能</li>
+                <li>キャラクター：固定（大会進行中の変更は不可）</li>
+            </ul>
+        </div>
+
+        <div class="section-card" style="border-left-color: #ffcc00;">
+            <h2>PRIZE // 賞品・賞金</h2>
+            <p>上位入賞者には特別なエナジー報酬を授与。詳細は後日発表！</p>
+        </div>
+
+        <div class="btn-container">
+            <a href="entry.html" class="entry-btn">CHARGE IN // エントリー</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SF6 ENERGY TOURNAMENT. This is a community event.</p>
+    </footer>
+
+</body>
+</html>
